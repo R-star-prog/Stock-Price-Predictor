@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Health App</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="code.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/4cd89e4075.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- phone mockup from: https://codepen.io/podyganov/pen/qBOZvoQ -->
+    <div class="mobile-phone">
+      <div class="brove"><span class="speaker"></span></div>
+      <div class="screen">
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Text')">
+            Text
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Choices')">
+            Choices
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'To Do')">
+            To Do
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Profile')">
+            Profile
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Colors')">
+            Colors
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Lower Right')">
+            Lower Right
+          </button>
+          <button
+            id="defaultOpen"
+            class="tablinks"
+            onclick="openTab(event, 'Style Guide')"
+          >
+            Style Guide
+          </button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Text" class="tabcontent">
+          <p class="scrollabletextbox">
+            <strong>Text</strong><br />A lot will go here.<br />A lot will go
+            here.<br />A lot will go here.<br />A lot will go here.<br />A lot
+            will go here.<br />A lot will go here.<br />A lot will go here.<br />A
+            lot will go here.<br />A lot will go here.<br />A lot will go
+            here.<br />A lot will go here.<br />A lot will go here.<br />A lot
+            will go here.<br />A lot will go here.<br />A lot will go here.<br />A
+            lot will go here.<br />A lot will go here.<br />A lot will go
+            here.<br />A lot will go here.<br />A lot will go here.<br />A lot
+            will go here.<br />A lot will go here.<br />A lot will go here.<br />A
+            lot will go here.<br />A lot will go here.<br />A lot will go
+            here.<br />A lot will go here.<br />A lot will go here.<br />
+          </p>
+        </div>
+
+        <div id="Choices" class="tabcontent">
+          <h3>Choices</h3>
+          What technology will you use for this project?<br />
+          <label><input type="radio" name="tech" value="Java" />Java</label
+          ><br />
+          <label><input type="radio" name="tech" value="HTML" />HTML</label
+          ><br />
+          <label
+            ><input type="radio" name="tech" value="Android Studio" />Android
+            Studio</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              name="tech"
+              checked="checked"
+              value="I'm overwhelmed and
+            am dropping the class"
+            />I'm overwhelmed and am dropping the class</label
+          ><br /><br />
+
+          What grade are you expecting in this class?<br />
+          <select name="grade" id="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="Not Passing">Not Passing</option></select
+          ><br /><br />
+
+          <button onclick="showResults()">Show Me My Answers</button>
+          <div id="results"></div>
+        </div>
+
+        <div id="To Do" class="tabcontent">
+          <h3>To Do</h3>
+          <input type="text" id="myInput" placeholder="New entry..." />
+          <button onclick="newElement()" class="addBtn">Add</button>
+          <ul id="myUL"></ul>
+        </div>
+
+        <div id="Profile" class="tabcontent">
+          <h3>Profile</h3>
+          <div id="pageArea">
+            <div id="textArea">
+              <label id="textbox">This is a notification</label>
+              <button id="closeButton">Close</button>
+            </div>
+            <img src="./images.png" alt="Image" id="profile" />
+            <p id="fullName">firstName MiddleName LastName</p>
+          </div>
+        </div>
+
+        <div id="Colors" class="tabcontent">
+          <h3>Colors</h3>
+          <div id="firstSection">Hello There</div>
+          <div id="secondSection">How are you?</div>
+        </div>
+
+        <div id="Lower Right" class="tabcontent">
+          <h3>Lower Right</h3>
+          <div id="DownHereText">Down Here</div>
+        </div>
+
+        <div id="Style Guide" class="tabcontent">
+          <strong><u>Typography</u></strong
+          ><br /><br />
+          <div class="headings">Headings: Arial, x-large font size</div>
+          <div class="body">Body: Arial, medium font size</div>
+          <div class="regular-text">Regular text: Arial, small font size</div>
+          <br />
+
+          <strong><u>Colors</u></strong
+          ><br /><br />
+          <div class="background-color">Background Color: Pale Turquoise</div>
+          <div class="headings-color">Heading Color: Black</div>
+          <div class="body-color">Body Color: Black</div>
+          <div class="reg">Regular Text Color: Black</div>
+          <strong><u>Buttons</u></strong
+            ><br /><br />
+          
+          <button class="submit-button-style">
+            Submit Button Color:
+            <div class="submit-button-text-style">Black, 600 weight text</div>
+            on #0fdc0f Submit Button
+          </button>
+
+          <br> <br>
+          <button class="delete-button-style">
+            Delete Entry Button Color:
+            <div class="delete-button-text-style">Black, 600 weight text</div>
+            on #f22020 Delete Button
+          </button>
+
+          <br> <br>
+          <button class="clearAll-button-style">
+            Clear All Entry Button Color:
+            <div class="clearAll-button-text-style">Black, 600 weight text</div>
+            on #f22020 ClearAll Button
+          </button>
+          
+
+          <div class="headings"></div>
+          <br />
+
+          <strong><u>Iconography</u></strong
+          ><br /><br />
+          Font Awesome Library <br /><br />
+          <i class="fa-solid fa-person-running fa-2xl"></i>
+          <i class="fa-sharp fa-solid fa-apple-whole fa-2xl"></i>
+          <i class="fa-sharp fa-solid fa-chart-line fa-2xl"></i>
+          <i class="fas fa-user"></i>
+          <i class="fas fa-utensils"></i>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
